@@ -2,24 +2,38 @@ package com.example.mobile_module
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
-import android.widget.EditText
+import android.view.View.inflate
+import android.widget.*
+import com.example.mobile_module.databinding.ActivityMainBinding.inflate
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val popupMenuButton = findViewById<Button>(R.id.popupMenuButton)
+        val popupMenu = PopupMenu(this, popupMenuButton)
+        popupMenu.inflate(R.menu.menu)
+        popupMenuButton.setOnClickListener {
+            popupMenu.setOnMenuItemClickListener {
+                when (it.title)
+                {
+                    "Работа с переменными" -> {addVariableBlock()
+                    true}
+                    else -> {
+                        Toast.makeText(this, it.itemId, Toast.LENGTH_SHORT).show()
+                    true}
+                }
+            }
+            popupMenu.show()
+        }
+        //val popupMenu = PopupMenu(this, popupMenuButton)
     }
-
-    val vars:Vars = Vars()
-    fun addVariable(view: View){
-        val v = vars
-        val editNameVar = findViewById<EditText>(R.id.varName)
-        val varName = editNameVar.text.toString()
-        val editAmountVar = findViewById<EditText>(R.id.varVal)
-        val varAmount = editAmountVar.text.toString()
-        v.insertData(varName, varAmount)
-        editNameVar.setText("")
-        editAmountVar.setText("")
+    fun addVariableBlock()
+    {
+        val maincontainer = findViewById<LinearLayout>(R.id.blocksContainer)
+        val block = layoutInflater.inflate(R.layout.activity_variables_block,maincontainer,true)
     }
 }
