@@ -20,16 +20,16 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="81dp"
+            android:layout_height="39dp"
             android:layout_centerVertical="true"
             android:gravity="center"
             android:text="Работа с переменной"
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <EditText
-            android:id="@+id/VarName"
+            android:id="@+id/varName"
             android:layout_width="80dp"
             android:layout_height="50dp"
             android:layout_toRightOf="@id/textView"
@@ -41,28 +41,35 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="wrap_content"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="false"
-            android:layout_centerVertical="true"
             android:layout_toLeftOf="@id/varVal"
-            android:layout_toRightOf="@id/VarName"
+            android:layout_toRightOf="@id/varName"
             android:gravity="center"
             android:text="="
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:layout_centerVertical="true" />
 
         <EditText
             android:id="@+id/varVal"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
+            android:layout_alignParentEnd="false"
             android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/saveButton"
             android:ems="10"
             android:gravity="center"
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:text="Value"
             android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="Save" />
 
 
     </RelativeLayout>

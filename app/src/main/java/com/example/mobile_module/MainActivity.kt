@@ -8,6 +8,9 @@ import android.view.View
 import android.view.View.inflate
 import android.widget.*
 import com.example.mobile_module.databinding.ActivityMainBinding.inflate
+import kotlinx.android.synthetic.main.activity_main.*
+
+val vars = Vars()
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,5 +38,9 @@ class MainActivity : AppCompatActivity() {
     {
         val maincontainer = findViewById<LinearLayout>(R.id.blocksContainer)
         val block = layoutInflater.inflate(R.layout.activity_variables_block,maincontainer,true)
+        val saveButton = findViewById<Button>(R.id.saveButton)
+        saveButton.setOnClickListener {
+            vars.addVariable()
+        }
     }
 }

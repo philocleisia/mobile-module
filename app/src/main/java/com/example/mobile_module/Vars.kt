@@ -1,5 +1,8 @@
 package com.example.mobile_module
 
+import android.widget.*
+import kotlinx.android.synthetic.main.activity_variables_block.*
+
 class Vars {
     private val numbersMap = mutableMapOf<String, String>()
 
@@ -7,8 +10,8 @@ class Vars {
         numbersMap.put(key,value)
         println(numbersMap)
     }
-    /* val vars:Vars = Vars()
-    fun addVariable(view: View){
+
+    fun addVariable(){
         val v = vars
         val editNameVar = findViewById<EditText>(R.id.varName)
         val varName = editNameVar.text.toString()
@@ -17,5 +20,5 @@ class Vars {
         v.insertData(varName, varAmount)
         editNameVar.setText("")
         editAmountVar.setText("")
-    } */
+    }
 }
